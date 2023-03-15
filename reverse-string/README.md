@@ -18,3 +18,7 @@
 	<li><code>s[i]</code> is a <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" target="_blank">printable ascii character</a>.</li>
 </ul>
 </div>
+
+<h2 style="color:red">notes:</h2><ul>
+	<li> use the opposite directional two-pointer approach.</li>
+</ul>
