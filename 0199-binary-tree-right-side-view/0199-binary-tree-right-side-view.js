@@ -15,21 +15,20 @@ var rightSideView = function(root) {
     let res=[], queue = [root], queueCount = 1; 
     let node, rowCount = 0;
     while(queue.length > 0) {
- 
-        node = queue.shift(); 
-               console.log(node)
-        rowCount++; 
-        if (node?.left) {
-            queue.push (node?.left)
+        rowCount++;
+        for (let i = 0 ; i < queueCount ; i++) {
+            node = queue.shift();
+            if (node?.left) {
+                queue.push (node?.left)
             }
-        if (node?.right) {
-            queue.push(node?.right)
+            if (node?.right) {
+                queue.push(node?.right)
             }
-        if (rowCount === queueCount) {
-            res.push(node?.val)
-            queueCount = queue.length
-            rowCount = 0         
+
         }
+        res.push(node?.val)
+        queueCount = queue.length
+        rowCount = 0
                                              
     }
     return res
