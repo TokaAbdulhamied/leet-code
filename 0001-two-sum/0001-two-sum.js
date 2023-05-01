@@ -10,7 +10,7 @@ var twoSum = function(nums, target) {
        if (dif[`${sub}`] != undefined) {
            return [dif[`${sub}`], i]
        }
-       dif = {...dif, [nums[i]] : i}
+       dif[nums[i]] = i
    }
    return null
 }; 
