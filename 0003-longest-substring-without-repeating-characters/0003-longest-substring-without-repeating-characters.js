@@ -8,18 +8,15 @@ var lengthOfLongestSubstring = function(s) {
     let i ; 
     for ( i =0 ; i < s.length ; i++) {
         let char = s[i]; 
-        if (hashWindow[char] == undefined) {
-            hashWindow[char] = i;  
-        }
-        else { 
+        if (hashWindow[char] != undefined){ 
             if (hashWindow[char] >= windowStart) {
                 windowLength = i- windowStart ;
                 if (longest < windowLength) longest = windowLength;
                 windowStart = hashWindow[char] +1; 
             }
-            hashWindow[char] = i;
         }
-        
+      hashWindow[char] = i;  
+
     }
     if (longest < i - windowStart)
         longest = i - windowStart;
