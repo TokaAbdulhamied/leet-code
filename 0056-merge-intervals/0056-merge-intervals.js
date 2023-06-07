@@ -4,7 +4,7 @@
  */
 var merge = function(intervals) {
     let result = []; 
-    intervals = intervals.sort(sortFunction)
+    intervals.sort(sortFunction)
     let currentInterval = intervals[0]; 
 
     console.log (intervals)
