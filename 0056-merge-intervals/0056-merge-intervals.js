@@ -4,7 +4,7 @@
  */
 var merge = function(intervals) {
     let result = []; 
-    intervals.sort(sortFunction)
+    intervals.sort((a,b)=>a[0] - b[0])
     let currentInterval = intervals[0]; 
 
     console.log (intervals)
@@ -23,11 +23,3 @@ var merge = function(intervals) {
     
 };
 
-function sortFunction(a, b) {
-    if (a[0] === b[0]) {
-        return 0;
-    }
-    else {
-        return (a[0] < b[0]) ? -1 : 1;
-    }
-}
