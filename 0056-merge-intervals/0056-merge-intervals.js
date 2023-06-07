@@ -1,0 +1,33 @@
+/**
+ * @param {number[][]} intervals
+ * @return {number[][]}
+ */
+var merge = function(intervals) {
+    let result = []; 
+    intervals = intervals.sort(sortFunction)
+    let currentInterval = intervals[0]; 
+
+    console.log (intervals)
+    for (let i = 1; i< intervals.length ; i++) {
+        if (intervals[i][0] > currentInterval[1]) {
+            result.push(currentInterval); 
+            currentInterval = intervals[i]
+        }
+        else {
+            currentInterval = [currentInterval[0], Math.max(intervals[i][1],currentInterval[1] )]
+        }
+        
+    }
+    result.push(currentInterval); 
+    return result
+    
+};
+
+function sortFunction(a, b) {
+    if (a[0] === b[0]) {
+        return 0;
+    }
+    else {
+        return (a[0] < b[0]) ? -1 : 1;
+    }
+}
